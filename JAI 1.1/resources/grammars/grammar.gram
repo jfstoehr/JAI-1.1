@@ -1,0 +1,14 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar 
+ */
+
+grammar grammar;
+
+public <activate> = ( noon | hey noon | hey buddy | okay noon);
+public <commands> = ( mute | unmute | screen saver );
+public <terminate> = ( go to sleep | you can sleep now);
+public <communications>  = ( call mom | can you call mom );
+public <numbers> = ( 1 | 2 | 3 | 4 | 5 );
+public <test> = ( twelve a m );
