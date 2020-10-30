@@ -46,22 +46,12 @@ public class ellis {
 			}
 		});
 		
-		//---------------MaryTTS Configuration-----------------------------
-		
-		// Setting the Current Voice
 		//tts.setVoice("cmu-slt-hsmm");
 		tts.setVoice("dfki-spike-hsmm");
-		
-		//Start the Speech Recognition
 		startSpeechRecognition();
 		
 	}
 	
-	/**
-	 * This method makes a decision based on the given text of the Speech Recognition
-	 * 
-	 * @param text
-	 */
 	public void makeDecision(String output) {
 		
 		output = output.trim();
@@ -178,13 +168,8 @@ public class ellis {
 		
 	}
 	
-	/**
-	 * Calls the MaryTTS to say the given text
-	 * @param text
-	 */
 	public void speak(String text) {
 		
-		//Check if it is already speaking
 		if (!tts.isSpeaking()) {
 			
 			new Thread(() -> tts.speak(text, 2.0f, true, false)).start();
@@ -193,9 +178,6 @@ public class ellis {
 		
 	}
 	
-	/**
-	 * Starts the Speech Recognition
-	 */
 	public void startSpeechRecognition() {
 		
 		new Thread(() -> {
@@ -210,20 +192,16 @@ public class ellis {
 		
 	}
 	
-	/**
-	 * Stops the Speech Recognition
-	 */
 	public void stopSpeechRecognition() {
 		
 		mic.close();
-		//System.out.println("Stopping Speech Recognition...." + " , Microphone State is:" + mic.getState());
 		
 	}
 	
 	/*
 	public static void main(String[] args) {
 		
-		new noon();
+		new ellis();
 		
 	}*/
 	
